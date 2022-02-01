@@ -32,9 +32,9 @@ $afficheVehicules = $pdo->query("SELECT * FROM vehicule ORDER BY created_at DESC
                 <td>
                     <?= $vehicule['code_postal']?>
                     <?= $vehicule['city'] ?>
-  
+                <?php if(!empty($vehicule['reservation_message'])):?>
                     <span class="badge bg-success">Ce bien a déjà été réservé !</span>
-                    
+                <?php endif ?>                   
                 </td>
                 <td>
                     <span class="badge bg-danger"><?= $vehicule['type'] ?></span>
